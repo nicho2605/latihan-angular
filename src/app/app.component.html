@@ -1,4 +1,11 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+Input bilangan pertama
+<input [(ngModel)] ="a" type="text">
+<br/>
+Input bilangan kedua
+<input [(ngModel)] ="b" type="text">
+<br/>
+<button (click)="klikhasil(a,b)">Hitung</button>
+<button (click)="clear()">Clear</button>
+<br/>
+<div *ngIf = "data != 0"[innerHTML]="output" [(ngModel)]="data">
+</div>

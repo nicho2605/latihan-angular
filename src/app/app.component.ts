@@ -6,5 +6,42 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular';
+  a;
+  b;
+  output = "";
+  hasil;
+
+  klikhasil(angka1,angka2){
+    this.a = parseInt(angka1);
+    this.b = parseInt(angka2);
+    this.hasil = Math.pow(parseInt(angka1), parseInt(angka2));
+    this.output = 'hasil =  '+ this.hasil + '<br/>';
+
+    if (this.hasil % 2 ==0){
+        for(let i = this.b ;i<=this.hasil; i++){
+          for(let j = 0; j<i; j++){
+            this.output += "*"
+          }
+          this.output += "<br/>"
+        }
+    }
+    if(this.hasil % 2 != 0){
+      for(let i = 0; i<this.b; i++){
+        for(let j = this.b-i; j>0; j--){
+          this.output += "*"
+        }
+        for(let x = 0; x<i+1 && x<this.a && i<this.a; x++){
+          this.output += "O"
+        }
+        this.output += "<br>"
+      }
+    }
+  }
+  clear(){
+    this.a="";
+    this.b="";
+    this.output="";
+    this.hasil=0
+  };
 }
+
