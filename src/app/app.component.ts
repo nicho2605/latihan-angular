@@ -17,6 +17,7 @@ export class AppComponent  {
     this.b = parseInt(angka2);
     this.hasil = Math.pow(parseInt(angka1), parseInt(angka2));
     this.besar = this.a;
+    
     if(this.b>this.a){
       this.besar = this.b;
     }
@@ -46,10 +47,10 @@ export class AppComponent  {
         }
         else{
           for(let i = 0; i<this.a; i++){
-            for(let j = this.b-i; j>0; j--){
+            for(let j = this.a-i; j>0; j--){
               this.output += "*"
             }
-            for(let x = 0; x<i+1 && x<this.a && i<this.a; x++){
+            for(let x = 0; x<i+1 && x<this.b && i<this.b; x++){
               this.output += "O"
             }
             this.output += "<br>"
