@@ -18,6 +18,7 @@ export class AppComponent  {
     this.output = 'hasil =  '+ this.hasil + '<br/>';
 
     if (this.hasil % 2 ==0){
+      this.output += "Pola B <br/>"
         for(let i = this.b ;i<=this.hasil; i++){
           for(let j = 0; j<i; j++){
             this.output += "*"
@@ -26,7 +27,20 @@ export class AppComponent  {
         }
     }
     if(this.hasil % 2 != 0){
-      for(let i = 0; i<this.b; i++){
+      this.output += "Pola A <br/>"
+        if (this.b>this.a){
+          for(let i = 0; i<this.b; i++){
+            for(let j = this.b-i; j>0; j--){
+              this.output += "*"
+            }
+            for(let x = 0; x<i+1 && x<this.a && i<this.a; x++){
+              this.output += "O"
+            }
+            this.output += "<br>"
+          }
+        }
+        else{
+          for(let i = 0; i<this.a; i++){
         for(let j = this.b-i; j>0; j--){
           this.output += "*"
         }
@@ -35,8 +49,9 @@ export class AppComponent  {
         }
         this.output += "<br>"
       }
+        }
+      }
     }
-  }
   clear(){
     this.a="";
     this.b="";
